@@ -2,9 +2,13 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "pnpm --filter @workspace/deepali-portfolio run dev",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build && node -e \"require('fs').cpSync('artifacts/deepali-portfolio/dist/public', 'dist', {recursive: true})\"",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
