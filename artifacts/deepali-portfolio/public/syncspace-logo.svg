@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 115" width="100%" height="100%">
+  <defs>
+    <linearGradient id="syncGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.05" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="460" height="115" fill="#09080E" rx="8" />
+  <rect x="0.5" y="0.5" width="459" height="114" fill="none" stroke="rgba(255, 255, 255, 0.08)" rx="8" />
+
+  <!-- Left Icon Frame -->
+  <g transform="translate(24, 20)">
+    <!-- Square border matching modern tech aesthetic -->
+    <rect width="75" height="75" rx="10" fill="#110F1A" stroke="rgba(255, 255, 255, 0.85)" stroke-width="2.5" />
+    
+    <!-- Sync Orbital Loops & Nodes -->
+    <!-- Orbit 1 -->
+    <path d="M 23 37.5 A 14.5 14.5 0 0 1 50 29 L 46 25 M 50 29 L 50 35" 
+          fill="none" stroke="url(#syncGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Orbit 2 (Reverse sync loop) -->
+    <path d="M 52 37.5 A 14.5 14.5 0 0 1 25 46 L 29 50 M 25 46 L 25 40" 
+          fill="none" stroke="url(#syncGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Center interconnected nodes -->
+    <circle cx="37.5" cy="37.5" r="4" fill="#FFFFFF" filter="url(#softGlow)" />
+    <circle cx="27" cy="27" r="2.5" fill="#38BDF8" />
+    <circle cx="48" cy="48" r="2.5" fill="#C084FC" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(122, 0)">
+    <!-- Main wordmark -->
+    <text x="0" y="65" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#FFFFFF" letter-spacing="2">SYNC<tspan fill="#A5B4FC">SPACE</tspan></text>
+    
+    <!-- Tech Tagline / Meta -->
+    <text x="2" y="85" font-family="'JetBrains Mono', monospace, 'Courier New'" font-size="9.5" font-weight="600" fill="#64748B" letter-spacing="3.5">REAL-TIME COLLABORATIVE ENGINE</text>
+  </g>
+</svg>

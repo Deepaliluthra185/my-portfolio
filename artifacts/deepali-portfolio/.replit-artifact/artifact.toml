@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Deepali Luthra — Portfolio"
+description = "A personal portfolio website for Deepali Luthra, with a polished dark interface, editable profile and project content, and contact links."
+version = "1.0.0"
+id = "artifacts/deepali-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18149
+
+[services.development]
+run = "pnpm --filter @workspace/deepali-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/deepali-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/deepali-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18149"
+BASE_PATH = "/"
