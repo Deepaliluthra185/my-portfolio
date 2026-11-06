@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "pnpm --filter @workspace/deepali-portfolio run dev",
     "build": "pnpm run typecheck && pnpm -r --if-present run build && node scripts/copy-dist.cjs",
+    "start": "pnpm --filter @workspace/deepali-portfolio run serve",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
