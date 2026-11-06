@@ -14,3 +14,4 @@ if (fs.existsSync(artifactDist)) {
     fs.cpSync(artifactDist, rootPublic, { recursive: true });
   }
 }
+

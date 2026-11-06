@@ -16,3 +16,4 @@ if (fs.existsSync(distDir)) {
     fs.cpSync(srcPath, destPath, { recursive: true });
   }
 }
+
